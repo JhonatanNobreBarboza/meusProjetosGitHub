@@ -1,0 +1,25 @@
+@media screen and (min-width: 700px){
+	.container01{
+		float: left;
+		width: 50%;		
+	}	
+	.container02{
+		float: right;
+		width: 50%;		
+	}		
+	#radio-imc:checked ~ #section-imc, #radio-iac:checked ~ #section-iac{
+		height: 400px;
+	}
+	.calcPeso{
+	width: 100%;
+	}
+	.calcAltura{
+	width: 100%;
+	}
+	.calcQuadrilIAC{
+	width: 100%;
+	}
+	.calcAlturaIAC{
+	width: 100%;
+	}
+}

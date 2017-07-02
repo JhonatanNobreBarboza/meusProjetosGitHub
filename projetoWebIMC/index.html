@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>HTML</title>
+        <meta name="description" content="">
+        <meta name="author" content="jhonatan">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+        <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link rel="stylesheet" href="css/mobile.css" type="text/css" />
+        <script type="application/javascript" src="js/function.js"></script>
+    </head>
+
+    <body>
+        <input type="radio" id="radio-imc" name="calculo" checked>
+        <label for="radio-imc">IMC</label>
+        <input type="radio" id="radio-iac" name="calculo" checked>
+        <label for="radio-iac">IAC</label>
+
+        <section id="section-imc">
+            <div class="container01">
+                <div class="calcAltura">
+                    <label for="altura">Altura</label><br>
+                    <input type="number" id="altura" name="altura" placeholder="00.00"/><br>
+                </div>
+                <div class="calcPeso">
+                    <label for="peso">Peso</label><br>
+                    <input type="number" id="peso" name="peso" placeholder="00.00 KG"/><br>
+                </div>
+                <input type="button" id="calcula" onclick="calculaIMC();" name="calcula" value="Calcular"/><br />
+            </div>
+            <div class="container02">
+            	<label for="resultado">Resultado:</label>
+                <input type="number" id="resultado" placeholder="00.00" disabled="disabled"/>
+                <table id="tabelaIMC">
+                    <tr>
+                        <th>IMC</th><th>Classificação</th>
+                    </tr>
+                    <tr class="ln">
+                        <td>até 16</td><td>Magreza Grave</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>16 à 16.99</td><td>Magreza Moderada</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>17 à 18.49</td><td>Magreza Leve</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>18.5 à 24.99</td><td>Saudável</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>25 à 29.99</td><td>Sobrepeso</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>30 à 34.49</td><td>Obesidade Grau I</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>35 à 39.99</td><td>Obesidade Grau II (severa)</td>
+                    </tr>
+                    <tr class="ln">
+                        <td>Maior que 40</td><td>Obesidade Grau III (Morbida)</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        <section id="section-iac">
+            <div class="container01">
+                <div class="calcQuadrilIAC">
+                    <label for="lblQuadrilIAC">Quadril</label><br>
+                    <input type="number" id="lblQuadrilIAC" name="lblQuadrilIAC" placeholder="00.00"/><br>
+                </div>
+                <div class="calcAlturaIAC">
+                    <label for="lblAlturaIAC">Altura</label><br>
+                    <input type="number" id="lblAlturaIAC" name="lblAlturaIAC" placeholder="00.00 KG"/><br>
+                </div>
+
+                <input type="radio" id="radio-mulher" name="IAC" checked>
+                <label for="radio-mulher">Mulher</label><br/>
+                <input type="radio" id="radio-homem" name="IAC" checked>
+                <label for="radio-homem">Homem</label><br>
+
+                <input type="button" id="btnIACHomem" onclick="calculaIAC();" name="btnIACHomem" value="Calcular"/><br />
+
+            </div>
+            <div class="container02">
+            	<label for="lblIACResultadoH">Resultado:</label>
+                <input type="number" name="lblIACResultadoH" id="lblIACResultadoH" onkeyup="substituiVirgula(this)" placeholder="00.00" disabled="disabled"/>
+                <table id="tabelaHomem">
+                    <tr>
+                        <th colspan="2">Homem</th>
+                    </tr>
+                    <tr>
+                        <th>IAC</th><th>Classificação</th>
+                    </tr>
+                    <tr class="lnH">
+                        <td >Menor que 6%</td><td>Tragico</td>
+                    </tr>
+                    <tr class="lnH">
+                        <td>6% à 10.99%</td><td>Excepcionalmente baixa</td>
+                    </tr>
+                    <tr class="lnH">
+                        <td>11% á 14.99%</td><td>Baixa</td>
+                    </tr>
+                    <tr class="lnH">
+                        <td>15% à 18.99%</td><td>Ideal</td>
+                    </tr>
+                    <tr class="lnH">
+                        <td>19% À 23.99%</td><td>Moderada</td>
+                    </tr>
+                    <tr class="lnH">
+                        <td>Maior que 24%</td><td>Excesso de gordura</td>
+                    </tr>				
+                </table>
+				<label for="lblIACResultadoM">Resultado:</label>
+                <input type="number" name="lblIACResultadoM" id="lblIACResultadoM" placeholder="00.00" disabled="disabled"/>
+                <table id="tabelaMulher">
+                    <tr>
+                        <th colspan="2">Mulher</th>
+                    </tr>
+                    <tr>
+                        <th>IAC</th><th>Classificação</th>
+                    </tr>
+                    <tr class="lnM">
+                        <td>Menor que 10%</td><td>Tragico</td>
+                    </tr>
+                    <tr class="lnM">
+                        <td>10% à 15.99%</td><td>Excepcionalmente baixa</td>
+                    </tr>
+                    <tr class="lnM">
+                        <td>16% á 19.99%</td><td>Baixa</td>
+                    </tr>
+                    <tr class="lnM">
+                        <td>20% à 25.99%</td><td>Ideal</td>
+                    </tr>
+                    <tr class="lnM">
+                        <td>26% À 29.99%</td><td>Moderada</td>
+                    </tr>
+                    <tr class="lnM">
+                        <td>Maior que 30%</td><td>Excesso de gordura</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>

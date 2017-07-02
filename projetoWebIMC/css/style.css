@@ -1,0 +1,116 @@
+body{
+	padding: 2%;
+}
+#section-imc, #section-iac{
+	display: none;
+	background-color: #88B7FF;
+	border-bottom:4px solid #1E447F;
+	width: 100%;
+}
+#radio-imc:checked ~ #section-imc, #radio-iac:checked ~ #section-iac{
+	display: block;
+	height: 100%;
+	width:100%;
+	text-align: center;
+	font-size: 20px;
+	padding-top:4%; 
+	font-weight: bold;	
+}
+#radio-imc, #radio-iac{
+	display: none;
+}
+#radio-imc:checked ~ label[for="radio-imc"], #radio-iac:checked ~ label[for="radio-iac"]{
+	background-color: #88B7FF;
+	color: #000000;
+}
+label[for*="radio-i"]{
+	background-color: #1E447F;
+	color: #ffffff;	
+	font-size: 20px;
+	text-align:center;
+	width:50%;
+	border-radius:15px 15px 0 0;
+	padding: 1%;	
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+label[for="radio-imc"]{
+
+}
+label[for="lblIACResultadoM"]{
+	display: none;
+}
+label[for="lblIACResultadoM"]{
+	display: none;	
+}
+label[for="lblIACResultadoH"]{
+	color:#1E447F;
+}
+label[for="resultado"]{
+	color:#1E447F;
+}
+label[for="radio-iac"]{
+	margin-left: -4px;
+}
+table, td, tr, th{
+	font-size:18px;
+	margin: 10% auto;
+	border: 1px solid #0D0524;
+}
+.calcPeso{
+	float: right;
+	color:#162955;
+	width: 50%;
+}
+.calcAltura{
+	float: left;
+	color:#162955;
+	width: 50%;
+}
+input[type=number]{
+	outline:none;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	background-color: #88B7FF;
+	border-bottom-color: #000000;
+	text-align: center;	
+	width: 100px;
+	font-size: 20px;
+}
+#resultado{
+	width: 120px;
+}
+input[type=button]{
+	height:30px;
+	outline:none;
+	background-color:#1E447F;
+	color:#ffffff;
+	margin-top:30px;
+	margin-bottom:30px;
+	border-radius: 30px;
+	font-size: 20px;
+	width: 50%;
+	border: none;
+}
+#tabelaMulher, #lblIACResultadoM{
+	display: none;
+	color: #22154D;
+}
+.calcQuadrilIAC{
+	float: left;
+	color: #22154D;
+	width: 50%;
+}
+.calcAlturaIAC{
+	float: right;
+	color:#22154D;
+	width: 50%;
+}
+#radio-mulher{
+	margin-top: 30px;
+	color: #22154D;
+	display: inline-block;
+}
+
